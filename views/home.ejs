@@ -1,0 +1,18 @@
+<!-- called partials  -> (<%- -%>)   output the result same as when  the included file will run -->
+<%- include("partials/header"); -%>
+
+<h1>Home</h1>
+<p> <%= content %></p>
+<hr>
+<!-- forEach loop -->
+<% postArr.forEach(post => {  %>
+    <h4><%= post.title %></h4>
+    <p>
+        <%= post.content.substring(0,100)+"..." %>
+        <a href="/posts/<%= post._id %>">Read More</a>
+    </p>
+<%  });  %>
+
+
+
+<%- include("partials/footer"); -%>
